@@ -10,9 +10,6 @@ const imageRoutes = require('./routes/images');
 const app = express();
 app.use(express.json());
 
-
-
-// ✅ Step 1: CORS configuration (must be before routes)
 const allowedOrigins = [
   'http://localhost:5173', 
   'https://image-processing-tool-c7k8.vercel.app'
@@ -20,7 +17,6 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl)
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) {
       callback(null, true);

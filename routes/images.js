@@ -13,7 +13,7 @@ router.post('/rotate', protect, upload.single('image'), imgCtrl.rotate);
 router.post('/adjust', protect, upload.single('image'), imgCtrl.adjust);
 router.post('/convert', protect, upload.single('image'), imgCtrl.convert);
 
-// placeholders (auth optional)
+// ML work
 router.post('/find-object', protect, upload.single('image'), imgCtrl.findObject);
 router.post('/extract-text', protect, upload.single('image'), imgCtrl.textExtractor);
 router.post('/magic-brush', protect, upload.single('image'), imgCtrl.magicBrush);
